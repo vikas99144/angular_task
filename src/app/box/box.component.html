@@ -1,0 +1,25 @@
+
+<div style="padding-left: 300px; padding-top: 40px;">
+
+      <div    *ngFor="let image of images; let i = index;">
+      <div class="row">
+        <div  (click)="OpenAddFilesDialog(i)">
+          <img   [src]="image.url" style="width:100px; height: 50px;"  />
+        </div>
+       <div >
+        <button title="Shift images" (click)="removeImage(i)">
+          Shift box {{i + 1}}
+        </button>&nbsp;
+        <button title="Remove image to particular box" (click)="remove(i)">
+          {{i + 1}}
+        </button>
+       </div>
+   
+    </div>
+      <br>
+      <div>
+        <input type="file" style="display: none;" (change)="fileUpload($event)" #FileSelectInputDialog /> 
+      </div>
+    </div>
+
+</div>
